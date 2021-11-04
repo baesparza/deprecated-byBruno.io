@@ -1,7 +1,13 @@
 export function Resume() {
     return (
-        <div className="bg-white-resume min-h-screen">
-            <header className="p-10 flex flex-col justify-start items-start md:flex-row md:justify-between md:items-center gap-5">
+        <div className="relative bg-[#F7FBFE] min-h-screen">
+            {/* style bubbles */}
+            <div className="absolute z-10 -top-4 -left-4 w-32 h-32 bg-[#DCDBFF] rounded-full blur-2xl"></div>
+            <div className="absolute z-10 top-4 left-20 w-32 h-32 bg-[#FCF0D0] rounded-full blur-2xl"></div>
+            <div className="absolute z-10 top-8 left-4 w-32 h-32 bg-[#F9C0C5] rounded-full blur-2xl"></div>
+
+            {/* header with name and contact */}
+            <header className="relative z-20 p-10 flex flex-col justify-start items-start sm:flex-row sm:justify-between sm:items-center gap-5 print:flex-row print:justify-between print:items-center">
                 {/* name */}
                 <div>
                     <h1 className="whitespace-nowrap text-xl font-bold text-black-darker">
@@ -12,7 +18,7 @@ export function Resume() {
                     </h2>
                 </div>
                 {/* contact links */}
-                <div className="flex flex-col items-start md:items-end gap-1">
+                <div className="flex flex-col items-start sm:items-end gap-1 print:items-end">
                     <span className="text-xs font-semibold text-black-lighter">+593 99 262 0353</span>
                     <a className="underline text-xs font-semibold text-black-lighter" href="mailto:bruno.be81@gmail.com">bruno.be81@gmail.com</a>
                     <a className="underline text-xs font-semibold text-black-lighter" href="https://www.linkedin.com/in/bruno-esparza-c/">linkedin.com/in/bruno-esparza-c/</a>
@@ -21,10 +27,10 @@ export function Resume() {
             </header>
 
             {/* divider */}
-            <div className="border border-dotted border-black-lighter"></div>
+            <div className="relative z-20 border border-dotted border-black-lighter"></div>
 
             {/* content */}
-            <main className="px-10 py-8 flex flex-col gap-5">
+            <main className="relative z-20 px-10 py-8 flex flex-col gap-5">
                 <ResumeRow>
                     <ResumeSectionTile>
                         Summary
@@ -45,7 +51,7 @@ export function Resume() {
                     <ResumeSectionContent>
                         <ResumeSectionContentGroup>
                             <ResumeSectionContentParagraph>
-                                Web Technologies • Cloud-Native • Google Cloud Platform (GCP) • Full-Stack Development • Web Design • Team Leadership • Devops • Usability Design • Communication • Agile • Teamwork
+                                Javascript • Typescript • Angular • React • VueJS • Tailwind Css • SASS • NodeJS • Web Technologies • Containers • Google Cloud Platform (GCP) • Dart • Flutter • Cloud-Native • Full-Stack Development • Web Design • Python • Java • CI/CD • Devops • Team Leadership • Figma • Usability Design • Communication • Agile • Teamwork
                             </ResumeSectionContentParagraph>
                         </ResumeSectionContentGroup>
                     </ResumeSectionContent>
@@ -271,19 +277,19 @@ export function Resume() {
 }
 
 const ResumeRow: React.FC = ({ children }) => (
-    <section className="flex flex-col md:flex-row gap-2 md:gap-5">
+    <section className="content-group flex flex-col sm:flex-row gap-2 sm:gap-5 print:gap-5 print:flex-row">
         {children}
     </section>
 );
 
 const ResumeSectionTile: React.FC = ({ children }) => (
-    <h1 className="md:w-1/5 font-bold text-sm text-black-darker -ml-2 md:ml-0">
+    <h1 className="sm:w-1/5 font-bold text-sm text-black-darker -ml-2 sm:ml-0 print:w-1/5 print:ml-0">
         {children}
     </h1>
 );
 
 const ResumeSectionContent: React.FC = ({ children }) => (
-    <div className="md:w-4/5">
+    <div className="sm:w-4/5 print:w-4/5 page" >
         <div className="flex flex-col gap-4">
             {children}
         </div>
@@ -291,7 +297,7 @@ const ResumeSectionContent: React.FC = ({ children }) => (
 );
 
 const ResumeSectionContentGroup: React.FC = ({ children }) => (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col ">
         {children}
     </div>
 );
