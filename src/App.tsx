@@ -4,12 +4,11 @@ import { Resume } from './resume/resume.page';
 
 function App() {
   return (
-    <main>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="resume" element={<Resume />} />
-      </Routes>
-    </main>)
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="resume" element={<Resume />} />
+    </Routes>
+  )
 }
 
 export default App
