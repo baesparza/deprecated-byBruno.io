@@ -1,5 +1,11 @@
+import github from './icons/github.svg';
+import globe from './icons/globe.svg';
+import linkedin from './icons/linkedin.svg';
+import mail from './icons/mail.svg';
+
 export function Resume() {
     return (
+
         <div className="relative bg-[#F7FBFE] min-h-screen">
             {/* style bubbles */}
             <div className="absolute z-10 -top-4 -left-4 w-32 h-32 bg-[#DCDBFF] rounded-full blur-2xl"></div>
@@ -19,10 +25,18 @@ export function Resume() {
                 </div>
                 {/* contact links */}
                 <div className="flex flex-col items-start sm:items-end gap-1 print:items-end">
-                    <span className="text-xs font-semibold text-black-lighter">+593 99 262 0353</span>
-                    <a className="underline text-xs font-semibold text-black-lighter" href="mailto:bruno.be81@gmail.com">bruno.be81@gmail.com</a>
-                    <a className="underline text-xs font-semibold text-black-lighter" href="https://www.linkedin.com/in/bruno-esparza-c/">linkedin.com/in/bruno-esparza-c/</a>
-                    <a className="underline text-xs font-semibold text-black-lighter" href="https://github.com/baesparza">github.com/baesparza</a>
+                    <ContactLink image={globe} alt="Email" href="https://baesparza.github.io/" >
+                        baesparza.github.io
+                    </ContactLink>
+                    <ContactLink image={mail} alt="Email" href="mailto:bruno.be81@gmail.com" >
+                        bruno.be81@gmail.com
+                    </ContactLink>
+                    <ContactLink image={linkedin} alt="Github" href="https://www.linkedin.com/in/bruno-esparza-c/" >
+                        linkedin.com/in/bruno-esparza-c/
+                    </ContactLink>
+                    <ContactLink image={github} alt="Github" href="https://github.com/baesparza" >
+                        github.com/baesparza
+                    </ContactLink>
                 </div>
             </header>
 
@@ -276,6 +290,14 @@ export function Resume() {
     );
 }
 
+const ContactLink: React.FC<{ image: string, alt: string, href: string }> = ({ image, alt, href, children }) => (
+    <div className='flex flex-row-reverse sm:flex-row gap-2'>
+        <a target="_blank" rel="noopener noreferrer" className="underline text-xs font-semibold text-black-lighter" href={href}>
+            {children}
+        </a>
+        <img src={image} className="h-4" alt={alt} />
+    </div>
+);
 const ResumeRow: React.FC = ({ children }) => (
     <section className="content-group flex flex-col sm:flex-row gap-2 sm:gap-5 print:gap-5 print:flex-row">
         {children}
