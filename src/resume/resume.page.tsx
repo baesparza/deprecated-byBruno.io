@@ -85,10 +85,11 @@ export function Resume() {
                             <ResumeSectionContentParagraph>
                                 <ul>
                                     <li>- Plan projects (concept, requirements, architecture, cost, time)</li>
-                                    <li>- Lead project development</li>
-                                    <li>- Set up workflows and automation</li>
-                                    <li>- Monitor performance</li>
-                                    <li>- Estimate cost per user</li>
+                                    <li>- Lead project development (Lab Móvil 2222)</li>
+                                    <li>- Set up automated workflows </li>
+                                    <li>- Monitor performance of applications</li>
+                                    <li>- Estimate the cost of maintaining the applications</li>
+                                    <li>- Optimize applications for low cost</li>
                                 </ul>
                             </ResumeSectionContentParagraph>
                         </ResumeSectionContentGroup>
