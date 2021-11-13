@@ -77,7 +77,7 @@ export function Resume() {
                     <ResumeSectionContent>
                         <ResumeSectionContentGroup>
                             <ResumeSectionContentTitle>
-                                Chief Technology Officer at Binnarium
+                                Front End Lead Developer at Binnarium
                             </ResumeSectionContentTitle>
                             <ResumeSectionContentDate>
                                 Feb 2021 - Present (9 months +)
