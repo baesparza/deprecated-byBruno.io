@@ -203,7 +203,7 @@ export function Resume() {
                                 Feb 2021 - Present (9 months +)
                             </ResumeSectionContentDate>
                             <ResumeSectionContentParagraph>
-                                Content platform + co-creation for and by teachers of primary and secondary education in Ecuador.
+                            Content platform + co-creation for and by teachers of primary and secondary education in Ecuador. The platform is available to host 2000 students with video on demand, access to books, chats. Integrated services like PubPub, Clubhouse,  MeiliSearch, Video On Demand API. The platform is available in Android and IOS stores.
                                 <br />
                                 <br />
                                 My role in the project was:
@@ -211,6 +211,7 @@ export function Resume() {
                                     <li>- Guide the development of the Lab Móvil 2222</li>
                                     <li>- Created a custom dashboard to modify the content shown in the application</li>
                                     <li>- Creation of multiple services like image optimizer and video post-processing, gamification, chat moderation, and more.</li>
+                                    <li>- Active participation in the development of the mobile application with flutter.</li>
                                 </ul>
                                 <br />
                                 Technologies
@@ -219,7 +220,7 @@ export function Resume() {
                                     <li>- Stream with RxDart, and Rxjs</li>
                                     <li>- Flutter (mobile app)</li>
                                     <li>- Angular, tailwinds CSS (dashboard)</li>
-                                    <li>- Firebase & GCP & Cloud Run (post-processing, chat services,serverless backend )</li>
+                                    <li>- Firebase & GCP & Cloud Functions & Cloud Run (post-processing, chat services,serverless backend )</li>
                                     <li>- Github, GH-Project, GH-Actions (management)</li>
                                 </ul>
                             </ResumeSectionContentParagraph>
