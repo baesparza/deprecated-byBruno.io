@@ -77,19 +77,20 @@ export function Resume() {
                     <ResumeSectionContent>
                         <ResumeSectionContentGroup>
                             <ResumeSectionContentTitle>
-                                Front End Lead Developer at Binnarium
+                                Front End Developer & Project Lead at Binnarium
                             </ResumeSectionContentTitle>
                             <ResumeSectionContentDate>
                                 Feb 2021 - Present (9 months +)
                             </ResumeSectionContentDate>
                             <ResumeSectionContentParagraph>
                                 <ul>
-                                    <li>- Plan projects (concept, requirements, architecture, cost, time)</li>
+                                    <li>- Plan Projects (concept, requirements, architecture, cost, time)</li>
                                     <li>- Lead project development (Lab Móvil 2222)</li>
                                     <li>- Set up automated workflows </li>
                                     <li>- Monitor performance of applications</li>
                                     <li>- Estimate the cost of maintaining the applications</li>
                                     <li>- Optimize applications for low cost</li>
+                                    <li>- Frontend Developer (Lectulab, Lab Móvil 2222, Tour Virtual UTPL, other)</li>
                                 </ul>
                             </ResumeSectionContentParagraph>
                         </ResumeSectionContentGroup>
