@@ -10,7 +10,8 @@
     "history": "^5.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "react-router-dom": "^6.0.0"
+    "react-router-dom": "^6.0.0",
+    "tailwindcss-scroll-snap": "^1.1.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",

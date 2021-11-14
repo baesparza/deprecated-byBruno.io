@@ -8,6 +8,8 @@ module.exports = {
         lighter: '#6F7173',
         darker: '#000000',
       },
+      white: '#ffffff',
+      transparent: '#ffffff00',
     },
     extend: {
       screens: {
@@ -19,5 +21,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwindcss-scroll-snap')],
 }
