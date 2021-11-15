@@ -8,9 +8,9 @@ export function Resume() {
 
         <div className="relative bg-[#F7FBFE] min-h-screen">
             {/* style bubbles */}
-            <div className="absolute z-10 -top-4 -left-4 w-32 h-32 bg-[#DCDBFF] rounded-full blur-2xl"></div>
-            <div className="absolute z-10 top-4 left-20 w-32 h-32 bg-[#FCF0D0] rounded-full blur-2xl"></div>
-            <div className="absolute z-10 top-8 left-4 w-32 h-32 bg-[#F9C0C5] rounded-full blur-2xl"></div>
+            <div className="delay-150  duration-1000 animate-pulse absolute z-10 -top-4 -left-4 w-32 h-32 bg-[#b5b3e7] rounded-full blur-2xl"></div>
+            <div className="delay-500 duration-1000 animate-pulse absolute z-10 top-4 left-20 w-32 h-32 bg-[#f7e4b0] rounded-full blur-2xl"></div>
+            <div className="duration-1000 animate-pulse absolute z-10 top-8 left-4 w-32 h-32 bg-[#f3acb2] rounded-full blur-2xl"></div>
 
             {/* header with name and contact */}
             <header className="relative z-20 p-10 flex flex-col justify-start items-start sm:flex-row sm:justify-between sm:items-center gap-5 print:flex-row print:justify-between print:items-center">
