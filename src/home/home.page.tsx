@@ -145,9 +145,14 @@ const ProjectView: React.FC<{ project: ProjectModel, idx: number, prev?: VoidFun
             {/* project content */}
             <div className='relative h-full container mx-auto flex flex-col px-4 pb-8 justify-end '>
                 <div className='w-full md:w-4/6'>
-                    <h3 className='text-base md:text-lg font-medium text-white'>
-                        {project.projectName}
-                    </h3>
+                    {!!project.projectName
+                        ? (
+                            <h3 className='text-base md:text-lg font-medium text-white'>
+                                {project.projectName}
+                            </h3>
+                        )
+                        : null
+                    }
                     <h2 className='text-lg md:text-xl font-semibold text-white mb-2'>
                         {project.appName}
                     </h2>
