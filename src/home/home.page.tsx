@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 // import link from './icons/link.svg';
 import chevronLeft from './icons/chevron-left.svg';
 import chevronRight from './icons/chevron-right.svg';
@@ -44,13 +45,13 @@ export function Home() {
 interface Link {
     label: string;
     goto: string;
-    external?: boolean;
+    external: boolean;
 }
 
 const links: Readonly<Array<Link>> = [
-    { label: 'Github', goto: 'https://github.com/baesparza' },
-    { label: 'LinkedIn', goto: 'https://www.linkedin.com/in/bruno-esparza-c/' },
-    { label: 'Resume', goto: './resume' },
+    { label: 'Github', goto: 'https://github.com/baesparza', external: true },
+    { label: 'LinkedIn', goto: 'https://www.linkedin.com/in/bruno-esparza-c/', external: true },
+    { label: 'Resume', goto: './resume', external: false },
 ];
 
 
@@ -88,10 +89,15 @@ const NavigationBar: React.FC = () => {
                     <div className="flex-grow"></div>
 
                     {links.map((link, i) =>
-                        <a key={i} href={link.goto} className={`self-start text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#f12711] to-[#f5af19] transition-all delay-300 duration-300 ${open ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
-                            {link.label}
-                            <div className='h-1 w-full bg-white bg-gradient-to-r from-[#f12711] to-[#f5af19]' ></div>
-                        </a>
+                        link.external
+                            ? <a key={i} href={link.goto} className={`self-start text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#f12711] to-[#f5af19] transition-all delay-300 duration-300 ${open ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`} target='_blank' rel='noopener noreferrer'                            >
+                                {link.label}
+                                <div className='h-1 w-full bg-white bg-gradient-to-r from-[#f12711] to-[#f5af19]' ></div>
+                            </a>
+                            : <NavLink key={i} to={link.goto} className={`self-start text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#f12711] to-[#f5af19] transition-all delay-300 duration-300 ${open ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
+                                {link.label}
+                                <div className='h-1 w-full bg-white bg-gradient-to-r from-[#f12711] to-[#f5af19]' ></div>
+                            </NavLink>
                     )}
 
                     <div className="flex-grow-[2]"></div>
@@ -110,14 +116,27 @@ const NavButton: React.FC<{ link: Link }> = ({ link }) => {
 
     const [hover, setHover] = useState(false)
 
-    const isExternalLink = link.goto.includes('http');
+    if (link.external)
+        return <a
+            href={link.goto}
+            className='hidden md:block relative p-2 cursor-pointer rounded overflow-hidden'
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            target='_blank' rel='noopener noreferrer'
+        >
+            {/* decorated background */}
+            <div className={`absolute inset-0 z-10 bg-gradient-to-tr from-[#8E2DE2] to-[#ac00e0] transition-opacity ${hover ? 'opacity-100 animate-pulse' : 'opacity-0'}`}></div>
 
-    return <a
-        href={link.goto}
+            {/* link content */}
+            <div className='relative z-20 text-white text-xs font-semibold'>
+                {link.label}
+            </div>
+        </a>
+    return <NavLink
+        to={link.goto}
         className='hidden md:block relative p-2 cursor-pointer rounded overflow-hidden'
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        target={isExternalLink ? '_blank' : ''} rel={isExternalLink ? 'noopener noreferrer' : ''}
     >
         {/* decorated background */}
         <div className={`absolute inset-0 z-10 bg-gradient-to-tr from-[#8E2DE2] to-[#ac00e0] transition-opacity ${hover ? 'opacity-100 animate-pulse' : 'opacity-0'}`}></div>
@@ -126,7 +145,7 @@ const NavButton: React.FC<{ link: Link }> = ({ link }) => {
         <div className='relative z-20 text-white text-xs font-semibold'>
             {link.label}
         </div>
-    </a>
+    </NavLink>
 };
 
 const ProjectView: React.FC<{ project: ProjectModel, idx: number, prev?: VoidFunction, next?: VoidFunction }> = ({ idx, project, prev, next }) => {
