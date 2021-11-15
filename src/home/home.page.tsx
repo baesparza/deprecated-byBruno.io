@@ -170,13 +170,13 @@ const ProjectView: React.FC<{ project: ProjectModel, idx: number, prev?: VoidFun
                     {!!project.projectName
                         ? (
                             <h3 className='text-base md:text-lg font-medium text-white'>
-                                {project.projectName}
+                                {project.appName}
                             </h3>
                         )
                         : null
                     }
                     <h2 className='text-lg md:text-xl font-semibold text-white mb-2'>
-                        {project.appName}
+                        {project.projectName}
                     </h2>
                     <p className='text-sm md:text-base font-normal text-white mb-10 line-clamp-4'>
                         {project.description}
