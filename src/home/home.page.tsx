@@ -8,7 +8,7 @@ import { ProjectModel, ProjectsData } from "./projects.data";
 
 export function Home() {
     return (
-        <div className='w-screen h-screen overflow-hidden flex flex-col'>
+        <div className='fixed inset-0 overflow-hidden flex flex-col'>
             <NavigationBar></NavigationBar>
 
             {/* main content wrapper */}
