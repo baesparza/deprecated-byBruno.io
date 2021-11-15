@@ -78,7 +78,7 @@ const NavigationBar: React.FC = () => {
             </div>
 
             <div className={`fixed inset-0 w-full h-full bg-black-darker z-50 md:hidden transition-transform duration-500 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
-                <div className='relative p-8 h-full flex flex-col gap-12'>
+                <div className='relative p-8 h-full flex flex-col gap-8'>
                     {/* close button */}
                     <button onClick={() => setOpen(false)} className='text-white self-end'>X</button>
 
@@ -140,19 +140,21 @@ const ProjectView: React.FC<{ project: ProjectModel, idx: number, prev?: VoidFun
                 alt={project.appName} />
 
             {/* dark opacity decoration */}
-            <div className='absolute bottom-0 left-0 right-0 top-1/4 bg-gradient-to-b from-transparent to-black-darker'></div>
+            <div className='absolute inset-0  bg-gradient-to-b from-transparent to-black-darker'></div>
 
             {/* project content */}
-            <div className='relative h-full flex flex-col px-4 pb-8 justify-end '>
-                <h3 className='text-sm font-medium text-white'>
-                    {project.projectName}
-                </h3>
-                <h2 className='text-base font-semibold text-white mb-2'>
-                    {project.appName}
-                </h2>
-                <p className='text-xs font-normal text-white mb-20'>
-                    {project.description}
-                </p>
+            <div className='relative h-full container mx-auto flex flex-col px-4 pb-8 justify-end '>
+                <div className='w-full md:w-4/6'>
+                    <h3 className='text-base md:text-lg font-medium text-white'>
+                        {project.projectName}
+                    </h3>
+                    <h2 className='text-lg md:text-xl font-semibold text-white mb-2'>
+                        {project.appName}
+                    </h2>
+                    <p className='text-sm md:text-base font-normal text-white mb-10 line-clamp-4'>
+                        {project.description}
+                    </p>
+                </div>
 
                 {/* scroll controls */}
                 <div className='flex justify-between'>

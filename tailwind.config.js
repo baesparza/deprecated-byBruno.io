@@ -21,5 +21,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('tailwindcss-scroll-snap')],
+  plugins: [
+    require('tailwindcss-scroll-snap'),
+    require('@tailwindcss/line-clamp'),
+  ],
 }
