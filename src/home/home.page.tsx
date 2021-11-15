@@ -3,6 +3,7 @@ import { useState } from 'react';
 import chevronLeft from './icons/chevron-left.svg';
 import chevronRight from './icons/chevron-right.svg';
 import menu from './icons/menu.svg';
+import x from './icons/x.svg';
 // import info from './icons/info.svg';
 import { ProjectModel, ProjectsData } from "./projects.data";
 
@@ -73,14 +74,16 @@ const NavigationBar: React.FC = () => {
 
                 {/* menu actuator */}
                 <button className='md:hidden' onClick={() => setOpen(true)}>
-                    <img src={menu} className="h-4" alt="menu icon" />
+                    <img src={menu} className="h-4" alt="open menu icon" />
                 </button>
             </div>
 
             <div className={`fixed inset-0 w-full h-full bg-black-darker z-50 md:hidden transition-transform duration-500 ${open ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className='relative p-8 h-full flex flex-col gap-8'>
                     {/* close button */}
-                    <button onClick={() => setOpen(false)} className='text-white self-end'>X</button>
+                    <button onClick={() => setOpen(false)} className='text-white self-end'>
+                        <img src={x} className="h-4" alt="close menu icon" />
+                    </button>
 
                     <div className="flex-grow"></div>
 
