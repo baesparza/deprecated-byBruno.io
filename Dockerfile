@@ -7,7 +7,8 @@ WORKDIR /usr/src/app
 RUN npm install typescript -g
 
 # copy server instalation files & dependecies and libs
-COPY ["./server/package.json", "./server/package-lock.json*"] .
+COPY ./server/package.json .
+COPY ./server/package-lock.json* .
 
 # install everything needed 
 RUN npm install --ci --ignore-scripts
