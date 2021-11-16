@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDatabase } from "../hooks/use-database.hook";
 // import link from './icons/link.svg';
 import chevronLeft from './icons/chevron-left.svg';
 import chevronRight from './icons/chevron-right.svg';
@@ -9,6 +10,9 @@ import x from './icons/x.svg';
 import { ProjectModel, ProjectsData } from "./projects.data";
 
 export function Home() {
+
+    const { data } = useDatabase('630e1232bc4e4280b7fdda038a8bd9bb');
+    console.log({ data });
     return (
         <div className='fixed inset-0 overflow-hidden flex flex-col'>
             <NavigationBar></NavigationBar>
