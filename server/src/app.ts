@@ -1,4 +1,5 @@
 import fastify from "fastify";
+import fastifyStatic from "fastify-static";
 import path from 'path';
 import { NotionClient } from "./core/notion";
 
@@ -42,9 +43,27 @@ export const App = (opts = {}) => {
 
     // serve static files
     // TODO: enable only on production
-    app.register(require('fastify-static'), {
+    app.register(fastifyStatic, {
         root: path.join(__dirname, 'static'),
     });
+
+    // Not found handler
+    app.setNotFoundHandler((req, reply) => {
+        // API 404
+        if (req.raw.url && req.raw.url.startsWith("/api")) {
+            return reply.status(404).send({
+                ok: false,
+                error: {
+                    kind: "user_input",
+                    message: "Not Found",
+                },
+            });
+        }
+
+        // react SPA
+        reply.status(200).sendFile("index.html");
+    });
+
 
     return app;
 };
