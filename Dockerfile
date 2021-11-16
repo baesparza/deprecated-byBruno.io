@@ -4,16 +4,13 @@ FROM node:12.18-alpine
 WORKDIR /usr/src/app
 
 # install typescript to use it accross all project
-RUN npm  install typescript -g
-
-# copy server instalation files & dependecies and libs
-COPY ["server/package.json", "server/package-lock.json*"]
-
-# install everything needed 
-RUN npm install --ci --ignore-scripts
+RUN npm install typescript -g
 
 # copy source code 
 COPY ./server/. .
+
+# install everything needed 
+RUN npm install --ci --ignore-scripts
 
 # build source code
 RUN npm run build
