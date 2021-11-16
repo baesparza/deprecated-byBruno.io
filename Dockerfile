@@ -6,21 +6,31 @@ WORKDIR /usr/src/app
 # install typescript to use it accross all project
 RUN npm install typescript -g
 
-# copy server instalation files & dependecies and libs
+# setup server dependecies
 COPY ./server/package.json .
 COPY ./server/package-lock.json* .
-
-# install everything needed 
 RUN npm install --ci --ignore-scripts
 
-# copy source code 
-COPY ./server/. .
+# setup client dependecies
+WORKDIR /usr/src/app/build-client
+COPY ./client/package.json ./
+COPY ./client/package-lock.json* ./
+RUN npm install --ci --ignore-scripts
 
-# build source code
+# build server files in the base path
+WORKDIR /usr/src/app 
+COPY ./server/. .
 RUN npm run build
 
-# default expose port 5000 for servers
-EXPOSE 5000
+# build site 
+WORKDIR /usr/src/app/build-client
+COPY ./client/. .
+RUN npm run build
 
-# command to run application
+# back to base root and copy dependecies to work with the server
+WORKDIR /usr/src/app 
+RUN cp ./build-client/dist ./static
+
+# start server  
+EXPOSE 5000
 CMD ["npm", "run", "start"]
