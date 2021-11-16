@@ -3,6 +3,9 @@ FROM node:12.18-alpine
 # swap working directory
 WORKDIR /usr/src/app
 
+# install typescript to use it accross all project
+RUN npm  install typescript -g
+
 # copy server instalation files & dependecies and libs
 COPY ["server/package.json", "server/package-lock.json*"]
 
