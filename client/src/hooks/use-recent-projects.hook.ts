@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../config";
 
-const BASE_URL = import.meta.env.DEV ? 'https://bruno-esparza-codes-866tv.ondigitalocean.app' : '';
 
 export const useRecentProjects = () => {
 
@@ -11,7 +11,7 @@ export const useRecentProjects = () => {
 
     useEffect(() => {
         axios.get(`${BASE_URL}/api/recent-projects`)
-            .then(setData)
+            .then(res => setData(res.data))
             .catch(setError)
             .finally(() => setLoading(false));
     }, [])

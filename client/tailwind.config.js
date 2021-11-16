@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     colors: {
       'black': {
+        lightest: '#F1F1F1',
         lighter: '#6F7173',
         darker: '#000000',
       },
@@ -24,5 +25,6 @@ module.exports = {
   plugins: [
     require('tailwindcss-scroll-snap'),
     require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }
