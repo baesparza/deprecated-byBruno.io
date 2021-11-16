@@ -8,7 +8,10 @@ export const App = (opts = {}) => {
 
     /// register routes
     app.register((server, _, done) => {
+
         server.get('/recent-projects', async (request, reply) => {
+            reply.header("Access-Control-Allow-Methods", "GET");
+            reply.header("Access-Control-Allow-Origin", "*");
             try {
 
                 const response = await NotionClient.databases.query({

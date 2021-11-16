@@ -7,8 +7,8 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@notionhq/client": "^0.4.6",
     "@tailwindcss/line-clamp": "^0.2.2",
+    "axios": "^0.24.0",
     "history": "^5.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
