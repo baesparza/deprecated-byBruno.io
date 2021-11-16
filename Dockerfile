@@ -29,7 +29,7 @@ RUN npm run build
 
 # back to base root and copy dependecies to work with the server
 WORKDIR /usr/src/app 
-RUN cp ./build-client/dist/. ./static
+RUN cp -r ./build-client/dist/. ./static
 
 # start server  
 EXPOSE 5000
