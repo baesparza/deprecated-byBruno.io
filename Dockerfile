@@ -1,12 +1,12 @@
 FROM node:12.18-alpine
 
-# swap working directory
-WORKDIR /usr/src/app
 
 # install typescript to use it accross all project
 RUN npm install typescript -g
 
+# swap working directory
 # setup server dependecies
+WORKDIR /usr/src/app
 COPY ./server/package.json .
 COPY ./server/package-lock.json* .
 RUN npm install --ci --ignore-scripts
@@ -29,7 +29,7 @@ RUN npm run build
 
 # back to base root and copy dependecies to work with the server
 WORKDIR /usr/src/app 
-RUN cp -r ./build-client/dist/. ./static
+RUN cp -r ./build-client/dist/. ./dist/static
 
 # start server  
 EXPOSE 5000

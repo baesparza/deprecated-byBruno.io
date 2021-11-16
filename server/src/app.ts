@@ -7,14 +7,9 @@ const PROJECTS_DATABASE = '630e1232bc4e4280b7fdda038a8bd9bb';
 export const App = (opts = {}) => {
     const app = fastify(opts);
 
+
     /// register routes
     app.register((server, _, done) => {
-
-        // serve static files
-        // TODO: enable only on production
-        server.register(require('fastify-static'), {
-            root: path.join(__dirname, 'static'),
-        });
 
         // recent projects
         server.get('/recent-projects', async (request, reply) => {
@@ -44,6 +39,12 @@ export const App = (opts = {}) => {
 
         done();
     }, { prefix: "/api" });
+
+    // serve static files
+    // TODO: enable only on production
+    app.register(require('fastify-static'), {
+        root: path.join(__dirname, 'static'),
+    });
 
     return app;
 };
