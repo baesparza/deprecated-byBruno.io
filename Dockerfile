@@ -21,8 +21,5 @@ RUN npm run build
 # default expose port 5000 for servers
 EXPOSE 5000
 
-# enable production mode 
-ENV NODE_ENV=production
-
 # command to run application
 CMD ["npm", "run", "start"]
