@@ -1,6 +1,6 @@
 import { IconType } from 'react-icons';
 import { FiGithub, FiGlobe, FiLinkedin, FiMail } from "react-icons/fi";
-import { DOMAIN, EMAIL } from '../config';
+import { DOMAIN, EMAIL, GITHUB } from '../config';
 
 
 export interface SocialLink {
@@ -15,8 +15,8 @@ export const allSocialLinks: Readonly<Array<SocialLink>> = [
     {
         icon: FiGithub,
         title: 'Github',
-        textUrl: 'github.com/baesparza/',
-        redirect: 'https://github.com/baesparza',
+        textUrl: GITHUB,
+        redirect: `https://${GITHUB}`,
         type: 'SOCIAL_NETWORK'
     },
     {
