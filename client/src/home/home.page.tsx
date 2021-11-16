@@ -1,19 +1,16 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-// import info from './icons/info.svg';
 import profile from '../../assets/profile.jpg';
 import { FooterComponent } from "../components/footer.component";
+import { HeaderComponent } from "../components/header.component";
 import { useRecentProjects } from "../hooks/use-recent-projects.hook";
 
 export function Home() {
-
 
     return (
         <div className='relative w-full overflow-x-hidden'>
             {/* decoration background */}
             <div className='absolute inset-0 bg-black-lightest top-[30rem] z-0'></div>
 
-            <NavigationBar ></NavigationBar>
+            <HeaderComponent />
 
             {/* main content wrapper */}
             <main className='relative container mx-auto mt-20 mb-16 px-4 flex flex-col'>
@@ -58,7 +55,7 @@ export function Home() {
                 {<Projects></Projects>}
             </section>
 
-            <FooterComponent></FooterComponent>
+            <FooterComponent />
         </div>
 
     );
@@ -81,78 +78,5 @@ const Projects: React.FC = () => {
         data
     </div>
 }
-interface Link {
-    label: string;
-    goto: string;
-    external: boolean;
-}
-
-const links: Readonly<Array<Link>> = [
-    { label: 'Resume', goto: './resume', external: false },
-];
-
-const NavigationBar: React.FC = () => {
-    return (
-        <header className='container mx-auto pt-20 px-4 flex items-center'>
-            {/* brand */}
-            <div>
-                <h1 className='font-medium text-base'>
-                    Bruno Esparza
-                </h1>
-
-                <h2 className='text-sm'>
-                    Frontend Developer, Binnarium
-                </h2>
-            </div>
-
-            {/* spacer */}
-            <div className='flex-grow-[2]'></div>
-
-            <nav className='flex flex-row gap-4'>
-                {
-                    links.map((l, i) => <NavButton link={l} key={i}></NavButton>)
-                }
-            </nav>
-
-            {/* spacer */}
-            <div className='flex-grow'></div>
-
-            {
-                links.map((l, i) => <NavButton link={l} key={i}></NavButton>)
-            }
-        </header>
-    );
-};
-
-const NavButton: React.FC<{ link: Link }> = ({ link }) => {
-
-    const [hover, setHover] = useState(false)
-
-    const parentClassName = 'hidden md:block relative p-2 cursor-pointer rounded overflow-hidden'
-
-    const backgroundDecoration = <div className={`absolute inset-0 z-10 bg-gradient-to-tr from-[#8E2DE2] to-[#ac00e0] transition-opacity ${hover ? 'opacity-100 animate-pulse' : 'opacity-0'}`}></div>;
-
-    const buttonContent = (<div className={`relative z-20  text-xs font-semibold transition-colors ${hover ? 'text-white' : 'text-black-darker'}`}>
-        {link.label}
-    </div>);
 
 
-    return link.external
-
-        // normal anchor link
-        ? (<a href={link.goto} className={parentClassName} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-            {/* decorated background */}
-            {backgroundDecoration}
-            {/* link content */}
-            {buttonContent}
-        </a>)
-
-        // react nav link
-        : (<NavLink to={link.goto} className={parentClassName} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-            {/* decorated background */}
-            {backgroundDecoration}
-
-            {/* link content */}
-            {buttonContent}
-        </NavLink>);
-};

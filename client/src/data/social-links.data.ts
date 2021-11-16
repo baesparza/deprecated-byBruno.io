@@ -1,5 +1,7 @@
 import { IconType } from 'react-icons';
 import { FiGithub, FiGlobe, FiLinkedin, FiMail } from "react-icons/fi";
+import { DOMAIN, EMAIL } from '../config';
+
 
 export interface SocialLink {
     icon: IconType;
@@ -27,15 +29,15 @@ export const allSocialLinks: Readonly<Array<SocialLink>> = [
     {
         icon: FiMail,
         title: 'Mail',
-        textUrl: 'bruno.be81@gmail.com',
-        redirect: 'mailto:bruno.be81@gmail.com',
+        textUrl: EMAIL,
+        redirect: `mailto:${EMAIL}`,
         type: 'CONTACT'
     },
     {
         icon: FiGlobe,
         title: 'Personal Website ',
-        textUrl: 'baesparza.github.io',
-        redirect: 'https://baesparza.github.io/',
+        textUrl: DOMAIN,
+        redirect: `https://${DOMAIN}`,
         type: 'CONTACT'
     },
 ];
