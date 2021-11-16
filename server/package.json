@@ -1,0 +1,17 @@
+{
+  "name": "api.baesparza.github.io",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "serve": "npm run build && npm run start"
+  },
+  "dependencies": {
+    "@notionhq/client": "^0.4.6",
+    "fastify": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "typescript": "^4.4.4"
+  }
+}
