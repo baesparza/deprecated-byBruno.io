@@ -32,7 +32,7 @@ export const App = (opts = {}) => {
                     ]
                 });
                 console.log(response);
-                reply.send({ data: response.results });
+                reply.send({ projects: response.results });
             } catch (error) {
                 reply.code(500).send({ ok: false });
             }
