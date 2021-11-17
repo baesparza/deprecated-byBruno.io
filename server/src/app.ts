@@ -28,7 +28,7 @@ export const App = (opts = {}) => {
                         },
                     },
                     sorts: [
-                        { property: 'date', direction: 'ascending' },
+                        { property: 'relevant', direction: 'ascending' },
                     ]
                 });
                 console.log(response);
