@@ -10,6 +10,7 @@ module.exports = {
         darker: '#000000',
       },
       white: '#ffffff',
+      primary: 'rgb(212,32,39)',
       transparent: '#ffffff00',
     },
     extend: {
