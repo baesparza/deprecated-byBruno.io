@@ -11,7 +11,7 @@ export function Home() {
     return (
         <div className='relative w-full overflow-x-hidden'>
             {/* decoration background */}
-            <div className='absolute inset-0 bg-black-lightest top-[30rem] z-0'></div>
+            <div className='absolute inset-0 bg-black-lightest top-[24rem] md:top-[30rem] z-0'></div>
 
             <HeaderComponent />
 
@@ -20,16 +20,18 @@ export function Home() {
 
 
             <section className='relative container mx-auto px-4'>
-                <div className='flex flex-row items-center justify-between'>
-                    <h3 className='text-white font-bold text-8xl whitespace-pre-wrap -mb-10'>
+                <div className='flex flex-row items-center justify-between mb-8 sm:mb-0'>
+                    <h3 className='text-white font-bold text-6xl sm:text-7xl md:text-8xl whitespace-pre-wrap  md:-mb-6'>
                         Relevant<br />Projects
                     </h3>
 
-                    <NavLink to='/all-projects' className='whitespace-nowrap bg-white text-base font-medium px-6 py-4 rounded-xl flex flex-nowrap gap-4 items-center'>
-                        <span>
-                            View all
-                        </span>
-                        <FiPlusCircle />
+                    <NavLink to='/all-projects' className=' bg-white text-xs md:text-base font-medium px-3 md:px-6 py-2 md:py-4 rounded-md md:rounded-xl '>
+                        <div className="flex flex-nowrap gap-2 md:gap-4 items-center">
+                            <span className="whitespace-nowrap">
+                                View all
+                            </span>
+                            <FiPlusCircle />
+                        </div>
                     </NavLink>
                 </div>
 
@@ -42,12 +44,8 @@ export function Home() {
     );
 }
 
-
-
-
 const ProjectsGrid: React.FC = () => {
     const { data, error, loading } = useRecentProjects();
-    console.log(data?.projects[0]);
 
     if (loading)
         return <span>...</span>;
@@ -55,7 +53,7 @@ const ProjectsGrid: React.FC = () => {
     if (error)
         return <span>No se pudieron cargar los proyectos</span>;
 
-    return (<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    return (<div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {
             data!.projects.map(p => (
                 <article key={p.id} className="w-full transform transition-transform duration-500 hover:-translate-y-1 hover:scale-105">
