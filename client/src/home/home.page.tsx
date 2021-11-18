@@ -53,27 +53,36 @@ const ProjectsGrid: React.FC = () => {
     if (error)
         return <span>No se pudieron cargar los proyectos</span>;
 
-    return (<div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        {
-            data!.projects.map(p => (
-                <article key={p.id} className="w-full transform transition-transform duration-500 hover:-translate-y-1 hover:scale-105">
-                    {/* cover image */}
-                    <div className="bg-white aspect-w-1 aspect-h-1 rounded-lg overflow-hidden shadow-lg">
-                        {
-                            !!p.cover?.file.url
-                                ? <FadeInImage src={p.cover?.file.url} alt="" className="absolute inset-0" />
-                                : null
-                        }
-                    </div>
+    return (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {
+                data!.projects.map(p => (
+                    <NavLink to={'/'} key={p.id}>
+                        <article className="w-full transform transition-transform duration-500 hover:-translate-y-1 hover:scale-105">
+                            {/* cover image */}
+                            <div className="bg-white aspect-w-1 aspect-h-1 rounded-lg overflow-hidden shadow-lg">
+                                {
+                                    !!p.cover?.file.url
+                                        ? <FadeInImage src={p.cover?.file.url} alt="" className="absolute inset-0" />
+                                        : null
+                                }
+                            </div>
 
-                    {/* project name */}
-                    <h3 className="text-xs font-medium pt-2 truncate">
-                        {p.properties.title.title[0].plain_text}
-                    </h3>
-                </article>
-            ))
-        }
-    </div>);
+                            {/* project name */}
+                            <h3 className="text-sm font-medium pt-2 truncate">
+                                {p.properties.title.title[0].plain_text}
+                            </h3>
+
+                            {/* project name */}
+                            <p className="text-xs pt-1 line-clamp-3">
+                                {p.properties.shortDescription.rich_text.map(t => t.plain_text).join(' ')}
+                            </p>
+                        </article>
+                    </NavLink>
+                ))
+            }
+        </div>
+    );
 }
 
 const FadeInImage: React.FC<React.HTMLProps<HTMLImageElement>> = ({ className, ...props }) => {
