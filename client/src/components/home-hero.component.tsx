@@ -8,7 +8,7 @@ export const HomeHeroComponent: React.FC = () => (
         <div id='leads' className='flex flex-col gap-4'>
             {
                 ['Designer.', 'Manager.', 'Developer.'].map((t, i) =>
-                    <h2 key={i} className='text-6xl md:text-7xl lg:text-8xl font-extrabold'>
+                    <h2 key={i} className='text-6xl md:text-7xl lg:text-8xl font-extrabold dark:text-white'>
                         {t}
                     </h2>
                 )
@@ -30,7 +30,7 @@ export const HomeHeroComponent: React.FC = () => (
                 <Tilt >
                     <img src={profile} alt="Selfie" className='md:w-56 lg:w-80 xl:w-96 drop-shadow-2xl ' />
                 </Tilt>
-                <span className='absolute top-100 text-xs lg:text-sm font-medium mt-4 flex gap-2'>
+                <span className='absolute top-100 text-xs lg:text-sm font-medium mt-4 flex gap-2 dark:text-white'>
                     <FiCornerLeftUp></FiCornerLeftUp>
                     <span>That's me & my sisters</span>
                 </span>

@@ -1,12 +1,13 @@
 module.exports = {
   mode: 'jit',
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or media
   theme: {
     colors: {
       'black': {
         lightest: '#F1F1F1',
         lighter: '#6F7173',
+        dark: '#1f1f1f',
         darker: '#000000',
       },
       white: '#ffffff',
