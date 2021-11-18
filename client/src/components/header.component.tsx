@@ -51,15 +51,17 @@ export const HeaderComponent: React.FC = () => {
             {/* external links */}
             <div className='ml-auto text-xs flex gap-4 md:gap-2' >
                 {socialNetworksLinks.map((l, i) => <IconButtonComponent key={i} link={l} rotate={i == 0}></IconButtonComponent>)}
+
+                {/* theme button */}
+                <button
+                    className='p-1 transition-transform hover:-translate-y-1 text-base dark:text-white'
+                    title='Change theme'
+                    onClick={toggleTheme}
+                >
+                    {theme === 'light' ? <FiMoon /> : <FiSun />}
+                </button>
             </div>
 
-            <button
-                className='p-1 transition-transform hover:-translate-y-1 text-base dark:text-white'
-                title='Change theme'
-                onClick={toggleTheme}
-            >
-                {theme === 'light' ? <FiMoon /> : <FiSun />}
-            </button>
         </header>
     );
 };
