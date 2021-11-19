@@ -1,14 +1,17 @@
+import { HelmetProvider } from "react-helmet-async";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./home/home.page";
-import { Resume } from './resume/resume.page';
+import { Home } from "./pages/home/home.page";
+import { Resume } from './pages/resume/resume.page';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      {/* <Route path="/" element={<Resume />} /> */}
-      <Route path="resume" element={<Resume />} />
-    </Routes>
+    <HelmetProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Resume />} /> */}
+        <Route path="resume" element={<Resume />} />
+      </Routes>
+    </HelmetProvider>
   )
 }
 

@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <base href="/">
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Bruno Esparza</title>
-  </head>
-  <body class="transition-colors bg-white dark:bg-black-darker">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <base href="/">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Bruno Esparza</title>
+  <meta name="description" content="Personal portfolio page for Bruno Esparza" />
+  <meta name="keywords" content="Bruno Esparza, baesparza, bruno.be81@gmail.com, Bruno Porfolio" />
+  
+  <!-- robots -->
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D5W6FBXGXW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-D5W6FBXGXW');
+  </script>
+</head>
+
+<body class="transition-colors bg-white dark:bg-black-darker">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

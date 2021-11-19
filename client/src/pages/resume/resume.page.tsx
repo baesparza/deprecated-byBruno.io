@@ -1,10 +1,12 @@
+import { MetaComponents } from "../../components/meta.component";
 import github from './icons/github.svg';
 import globe from './icons/globe.svg';
 import linkedin from './icons/linkedin.svg';
 import mail from './icons/mail.svg';
 
 export function Resume() {
-    return (
+    return (<>
+        <MetaComponents title="Resume" description="Bruno Esparza resume with relevant information about experience, education, projects, language and awards"></MetaComponents>
 
         <div className="relative bg-[#F7FBFE] min-h-screen">
             {/* style bubbles */}
@@ -203,7 +205,7 @@ export function Resume() {
                                 Feb 2021 - Present (9 months +)
                             </ResumeSectionContentDate>
                             <ResumeSectionContentParagraph>
-                            Content platform + co-creation for and by teachers of primary and secondary education in Ecuador. The platform is available to host 2000 students with video on demand, access to books, chats. Integrated services like PubPub, Clubhouse,  MeiliSearch, Video On Demand API. The platform is available in Android and IOS stores.
+                                Content platform + co-creation for and by teachers of primary and secondary education in Ecuador. The platform is available to host 2000 students with video on demand, access to books, chats. Integrated services like PubPub, Clubhouse,  MeiliSearch, Video On Demand API. The platform is available in Android and IOS stores.
                                 <br />
                                 <br />
                                 My role in the project was:
@@ -289,8 +291,7 @@ export function Resume() {
                 </ResumeRow>
             </main>
         </div >
-
-    );
+    </>);
 }
 
 const ContactLink: React.FC<{ image: string, alt: string, href: string }> = ({ image, alt, href, children }) => (
