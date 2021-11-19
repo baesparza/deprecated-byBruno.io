@@ -20,18 +20,18 @@ export const allSocialLinks: Readonly<Array<SocialLink>> = [
         type: 'SOCIAL_NETWORK'
     },
     {
-        icon: FiGithub,
-        title: 'Github',
-        textUrl: GITHUB,
-        redirect: `https://${GITHUB}`,
-        type: 'SOCIAL_NETWORK'
-    },
-    {
         icon: FiMail,
         title: 'Mail',
         textUrl: EMAIL,
         redirect: `mailto:${EMAIL}`,
         type: 'CONTACT'
+    },
+    {
+        icon: FiGithub,
+        title: 'Github',
+        textUrl: GITHUB,
+        redirect: `https://${GITHUB}`,
+        type: 'SOCIAL_NETWORK'
     },
     {
         icon: FiGlobe,
