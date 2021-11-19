@@ -13,17 +13,17 @@ export interface SocialLink {
 
 export const allSocialLinks: Readonly<Array<SocialLink>> = [
     {
+        icon: FiLinkedin,
+        title: 'LinkedIn',
+        textUrl: 'linkedin.com/in/bruno-esparza-c',
+        redirect: 'https://www.linkedin.com/in/bruno-esparza-c/',
+        type: 'SOCIAL_NETWORK'
+    },
+    {
         icon: FiGithub,
         title: 'Github',
         textUrl: GITHUB,
         redirect: `https://${GITHUB}`,
-        type: 'SOCIAL_NETWORK'
-    },
-    {
-        icon: FiLinkedin,
-        title: 'LinkedIn',
-        textUrl: 'linkedin.com/in/bruno-esparza-c/',
-        redirect: 'https://www.linkedin.com/in/bruno-esparza-c/',
         type: 'SOCIAL_NETWORK'
     },
     {
@@ -35,7 +35,7 @@ export const allSocialLinks: Readonly<Array<SocialLink>> = [
     },
     {
         icon: FiGlobe,
-        title: 'Personal Website ',
+        title: 'Personal Website',
         textUrl: DOMAIN,
         redirect: `https://${DOMAIN}`,
         type: 'CONTACT'
