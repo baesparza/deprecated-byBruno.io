@@ -24,7 +24,7 @@ export const allProjects = async () => NotionClient.databases.query({
             equals: true
         },
     },
-    sorts: [
-        // { property: 'date', direction: 'ascending' },
-    ]
+    // sorts: [
+    //     // { property: 'date', direction: 'ascending' },
+    // ]
 });

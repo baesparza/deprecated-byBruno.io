@@ -15,7 +15,7 @@ export const App = (opts = {}) => {
     app.register((server, _, done) => {
 
         // recent projects
-        server.get('/recent-projects', async (request, reply) => {
+        server.get('/recent-projects', async (_, reply) => {
             try {
                 const response = await recentProjects()
                 reply.send({ projects: response.results });
@@ -26,7 +26,7 @@ export const App = (opts = {}) => {
         });
 
         // all projects
-        server.get('/all-projects', async (request, reply) => {
+        server.get('/all-projects', async (_, reply) => {
             try {
                 const response = await allProjects()
                 reply.send({ projects: response.results });
