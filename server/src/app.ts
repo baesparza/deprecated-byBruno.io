@@ -21,7 +21,7 @@ export const App = (opts = {}) => {
                 reply.send({ projects: response.results });
             } catch (error) {
                 console.error(error);
-                reply.code(500).send({ ok: false });
+                reply.code(500).send({ ok: false, error });
             }
         });
 
@@ -32,7 +32,7 @@ export const App = (opts = {}) => {
                 reply.send({ projects: response.results });
             } catch (error) {
                 console.error(error);
-                reply.code(500).send({ ok: false });
+                reply.code(500).send({ ok: false, error });
             }
         });
 
@@ -45,7 +45,7 @@ export const App = (opts = {}) => {
                 reply.send({ ...response });
             } catch (error) {
                 console.error(error);
-                reply.code(500).send({ ok: false });
+                reply.code(500).send({ ok: false, error });
             }
         });
 
