@@ -5,6 +5,11 @@ export function Resume() {
         <MetaComponents title="Resume" description="Bruno Esparza resume with relevant information about experience, education, projects, language and awards"></MetaComponents>
 
         <div className="relative bg-[#F7FBFE] min-h-screen">
+            {/* download button */}
+            {/* <div className='fixed bottom-8 right-8 z-50 print:hidden'>
+                <DownloadResumeComponent />
+            </div> */}
+
             {/* style bubbles */}
             <div className="relative container mx-auto print:hidden animate-pulse blur-2xl">
                 <div className="absolute z-10 -top-4 -left-4 w-32 h-32 bg-[#b5b3e7] rounded-full"></div>
@@ -305,6 +310,7 @@ const ResumeRow: React.FC = ({ children }) => (
         {children}
     </section>
 );
+
 
 /// title of the section
 /// on larger screens than small, take [1/5] of the width of the available space
