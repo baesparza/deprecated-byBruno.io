@@ -59,7 +59,10 @@ export const App = (opts = {}) => {
         server.get('/download-resume', async (_, reply) => {
             try {
                 const pdf = await GenerateResumePdf();
-                reply.type('application/pdf').send(pdf);
+                reply
+                    .type('application/pdf')
+                    .header('Content-Disposition', 'attachment; filename="BrunoEsparzaResume.pdf"')
+                    .send(pdf);
             } catch (error) {
                 console.error(error);
                 reply.code(500).send({ ok: false, error });
