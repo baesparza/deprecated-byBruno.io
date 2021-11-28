@@ -15,7 +15,7 @@ export const GenerateResumePdf = async () => {
     });
 
     const page = await browser.newPage();
-    await page.goto(RESUME_URL, { waitUntil: 'networkidle2' });
+    await page.goto(RESUME_URL, { waitUntil: 'networkidle0' });
 
     const pdf = await page.pdf({
         format: "a4",
