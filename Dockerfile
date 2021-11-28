@@ -1,4 +1,4 @@
-FROM node:12.18-alpine
+FROM node:17-alpine3.12
 
 
 # install typescript to use it accross all project
