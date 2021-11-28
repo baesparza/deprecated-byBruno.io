@@ -10,19 +10,7 @@ export const App = (opts = {}) => {
     const app = fastify(opts);
 
     // enable only for development
-    app.register(fastifyCors, function (_) {
-        return (req, callback) => {
-            let corsOptions;
-            const origin = req.headers.origin
-            // do not include CORS headers for requests from localhost
-            if (/localhost/.test(origin)) {
-                corsOptions = { origin: false }
-            } else {
-                corsOptions = { origin: true }
-            }
-            callback(null, corsOptions) // callback expects two parameters: error and options
-        }
-    });
+    app.register(fastifyCors, {});
 
     /// register routes
     app.register((server, _, done) => {
@@ -73,7 +61,7 @@ export const App = (opts = {}) => {
                 const pdf = await GenerateResumePdf();
                 reply
                     .type('application/pdf')
-                    // .headers('Content-Disposition', 'attachment; filename="BrunoEsparzaResume.pdf"')
+                    .header('Content-Disposition', 'attachment; filename="BrunoEsparzaResume.pdf"')
                     .send(pdf);
             } catch (error) {
                 console.error(error);

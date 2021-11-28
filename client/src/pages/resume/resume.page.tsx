@@ -1,14 +1,16 @@
+import { DownloadResumeComponent } from "../../components/download-resume.component";
 import { MetaComponents } from "../../components/meta.component";
 import { allSocialLinks, SocialLink } from "../../data/social-links.data";
+
 export function Resume() {
     return (<>
         <MetaComponents title="Resume" description="Bruno Esparza resume with relevant information about experience, education, projects, language and awards"></MetaComponents>
 
         <div className="relative bg-[#F7FBFE] min-h-screen">
             {/* download button */}
-            {/* <div className='fixed bottom-8 right-8 z-50 print:hidden'>
+            <div className='fixed bottom-8 right-8 z-50 print:hidden'>
                 <DownloadResumeComponent />
-            </div> */}
+            </div>
 
             {/* style bubbles */}
             <div className="relative container mx-auto print:hidden animate-pulse blur-2xl">
