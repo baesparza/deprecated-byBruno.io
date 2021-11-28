@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/byBruno/by-bruno-io:$SHORT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/bybruno/by-bruno-io:$SHORT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/byBruno/by-bruno-io:$SHORT_SHA']
+  args: ['push', 'gcr.io/bybruno/by-bruno-io:$SHORT_SHA']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'by-bruno-io', '--image=gcr.io/byBruno/by-bruno-io:$SHORT_SHA', '--region=us-central1']
+  args: ['beta', 'run', 'deploy', 'by-bruno-io', '--image=gcr.io/bybruno/by-bruno-io:$SHORT_SHA', '--region=us-central1']
