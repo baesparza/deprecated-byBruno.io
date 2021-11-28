@@ -10,7 +10,19 @@ export const App = (opts = {}) => {
     const app = fastify(opts);
 
     // enable only for development
-    app.register(fastifyCors, {});
+    app.register(fastifyCors, function (_) {
+        return (req, callback) => {
+            let corsOptions;
+            const origin = req.headers.origin
+            // do not include CORS headers for requests from localhost
+            if (/localhost/.test(origin)) {
+                corsOptions = { origin: false }
+            } else {
+                corsOptions = { origin: true }
+            }
+            callback(null, corsOptions) // callback expects two parameters: error and options
+        }
+    });
 
     /// register routes
     app.register((server, _, done) => {
@@ -61,7 +73,7 @@ export const App = (opts = {}) => {
                 const pdf = await GenerateResumePdf();
                 reply
                     .type('application/pdf')
-                    .header('Content-Disposition', 'attachment; filename="BrunoEsparzaResume.pdf"')
+                    // .headers('Content-Disposition', 'attachment; filename="BrunoEsparzaResume.pdf"')
                     .send(pdf);
             } catch (error) {
                 console.error(error);
@@ -76,7 +88,6 @@ export const App = (opts = {}) => {
     app.register(fastifyStatic, {
         root: path.join(__dirname, 'static'),
     });
-
 
     // Not found handler
     app.setNotFoundHandler((req, reply) => {
