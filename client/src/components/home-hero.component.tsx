@@ -32,7 +32,7 @@ export const HomeHeroComponent: React.FC = () => (
                 </Tilt>
                 <span className='absolute top-100 text-xs lg:text-sm font-medium mt-4 flex gap-2 dark:text-white'>
                     <FiCornerLeftUp></FiCornerLeftUp>
-                    <span>That's me & my sisters</span>
+                    <span>That's me</span>
                 </span>
             </div>
         </div>
