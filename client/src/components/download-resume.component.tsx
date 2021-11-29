@@ -1,6 +1,5 @@
 import { FiDownload } from 'react-icons/fi';
 
-
 export const DownloadResumeComponent: React.FC = () => {
     return (
         <a

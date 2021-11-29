@@ -4,11 +4,11 @@ import profile from '../../assets/profile.jpg';
 import { GITHUB } from "./../config";
 
 export const HomeHeroComponent: React.FC = () => (
-    <main className='relative container mx-auto mt-12 md:mt-20 mb-16 px-4 flex flex-col'>
+    <main className='relative container mx-auto mt-12 md:mt-20 mb-16 px-8 flex flex-col'>
         <div id='leads' className='flex flex-col gap-4'>
             {
                 ['Designer.', 'Manager.', 'Developer.'].map((t, i) =>
-                    <h2 key={i} className='text-6xl md:text-7xl lg:text-8xl font-extrabold dark:text-white'>
+                    <h2 key={i} className='text-7xl md:text-8xl lg:text-9xl font-extrabold dark:text-white'>
                         {t}
                     </h2>
                 )
@@ -16,7 +16,7 @@ export const HomeHeroComponent: React.FC = () => (
         </div>
 
         {/* github direct link */}
-        <a href={`https://${GITHUB}`} className='self-start font-medium text-xs md:text-sm text-primary mt-12 flex gap-2 items-center transform transition-transform hover:translate-x-2' >
+        <a href={`https://${GITHUB}`} className='self-start font-medium text-sm md:text-base text-primary mt-12 flex gap-2 items-center transform transition-transform hover:translate-x-2' >
             <FiGithub></FiGithub>
             <span>
                 Follow me on Github
@@ -25,7 +25,7 @@ export const HomeHeroComponent: React.FC = () => (
         </a>
 
         {/* personal image */}
-        <div className='hidden md:block absolute -right-4 lg:-right-12 xl:right-8 2xl:right-auto 2xl:left-2/3 bottom-20 lg:bottom-12 xl:bottom-4'>
+        <div className='hidden md:block absolute -right-4  lg:-right-12 xl:right-8 2xl:right-auto 2xl:left-2/3 bottom-32 lg:bottom-20 xl:bottom-4'>
             <div className="relative">
                 <Tilt >
                     <img src={profile} alt="Selfie" className='md:w-56 lg:w-80 xl:w-96 drop-shadow-2xl ' />

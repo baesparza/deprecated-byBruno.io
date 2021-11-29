@@ -340,13 +340,13 @@ const ResumeSectionContentGroup: React.FC = ({ children }) => (
 );
 
 const ResumeSectionContentTitle: React.FC = ({ children }) => (
-    <div className="font-medium text-base text-black-darker">
+    <div className="font-semibold text-base text-black-darker">
         {children}
     </div>
 );
 
 const ResumeSectionContentParagraph: React.FC = ({ children }) => (
-    <div className="font-normal text-sm text-black-lighter ">
+    <div className="font-normal text-black-lighter ">
         {children}
     </div>
 );
