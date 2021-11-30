@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import profile from '../../assets/profile.jpg';
+import profile from '../assets/profile.jpg';
 
 export const MetaComponents: React.FC<{ title?: string, description?: string }> = ({ title, description }) => {
     const currDomain = document.URL;

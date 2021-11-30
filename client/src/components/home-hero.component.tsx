@@ -1,6 +1,6 @@
 import { FiArrowRight, FiCornerLeftUp, FiGithub } from "react-icons/fi";
 import Tilt from 'react-parallax-tilt';
-import profile from '../../assets/profile.jpg';
+import profile from '../assets/profile.jpg';
 import { GITHUB } from "./../config";
 
 export const HomeHeroComponent: React.FC = () => (
