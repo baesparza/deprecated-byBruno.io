@@ -13,7 +13,7 @@ interface Link {
 
 const links: Readonly<Array<Link>> = [
     { primary: false, label: 'Home', goto: '/' },
-    { primary: false, label: 'Projects', },
+    { primary: false, label: 'Projects', goto: '/all-projects' },
     { primary: false, label: 'Articles', },
     { primary: true, label: 'Resume', goto: '/resume' },
 ];

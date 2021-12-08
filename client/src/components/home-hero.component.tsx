@@ -8,7 +8,7 @@ export const HomeHeroComponent: React.FC = () => (
         <div id='leads' className='flex flex-col gap-4'>
             {
                 ['Designer.', 'Manager.', 'Developer.'].map((t, i) =>
-                    <h2 key={i} className='text-7xl md:text-8xl lg:text-9xl font-extrabold dark:text-white'>
+                    <h2 key={i} className='text-7xl md:text-8xl lg:text-9xl font-extrabold  text-black-darker dark:text-white'>
                         {t}
                     </h2>
                 )
