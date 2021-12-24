@@ -5,7 +5,7 @@ import { IconButtonComponent } from './icon-button.component';
 const currentYear = new Date().getFullYear();
 
 export const FooterComponent: React.FC = () => (
-    <footer className='relative container mx-auto px-4 pt-8 pb-12 md:pb-16 mt-16 border-t-4 border-white dark:border-black-darker' >
+    <footer className='relative container mx-auto px-8 pt-8 pb-12 md:pb-16 mt-16 border-t-4 border-white dark:border-black-darker' >
         <div className='grid gap-6 lg:grid-cols-3'>
             {/* social networks */}
             <div className='lg:mr-auto text-xs flex gap-4 md:gap-2' >
