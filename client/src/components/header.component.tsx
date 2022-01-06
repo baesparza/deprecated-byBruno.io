@@ -33,7 +33,11 @@ export const HeaderComponent: React.FC = () => {
                     </h1>
 
                     <h2 className='text-base md:text-sm dark:text-white'>
-                        Frontend Developer, <i>Binnarium</i>
+                        Full Stack Developer, <i>Technisys</i>
+                    </h2>
+                    
+                    <h2 className='text-base md:text-sm dark:text-white'>
+                        Co-founder, <i>Binnarium</i>
                     </h2>
                 </div>
 
