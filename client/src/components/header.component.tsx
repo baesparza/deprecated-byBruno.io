@@ -36,9 +36,6 @@ export const HeaderComponent: React.FC = () => {
                         Full Stack Developer, <i>Technisys</i>
                     </h2>
                     
-                    <h2 className='text-base md:text-sm dark:text-white'>
-                        Co-founder, <i>Binnarium</i>
-                    </h2>
                 </div>
 
                 {/* spacer */}
